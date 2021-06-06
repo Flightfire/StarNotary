@@ -14,7 +14,6 @@ contract StarNotary is ERC721 {
     // Implement Task 1 Add a name and symbol properties
     // name: Is a short name to your token
     // symbol: Is a short string like 'USD' -> 'American Dollar'
-    // Testing git
 
     constructor() public ERC721("StarToken", "STKN"){}
 
@@ -55,8 +54,10 @@ contract StarNotary is ERC721 {
     }
 
     // Implement Task 1 lookUptokenIdToStarInfo
-    function lookUptokenIdToStarInfo (uint _tokenId) public view returns (string memory) {
+    function lookUpTokenIdToStarInfo (uint _tokenId) public view returns (string memory) {
         //1. You should return the Star saved in tokenIdToStarInfo mapping
+        Star memory star = tokenIdToStarInfo[_tokenId];
+        return star.name;
     }
 
     // Implement Task 1 Exchange Stars function
